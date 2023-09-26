@@ -334,9 +334,10 @@
 
     var proxied = XMLHttpRequest.prototype.open;
 
+    
     XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
         var self = this;
-
+    
         if (shouldTrackRequest(url)) {
             var stackElement = {
                 loading: true,
@@ -359,7 +360,9 @@
             }, false);
             renderAjaxRequests();
         }
-        proxied.apply(this, Array.prototype.slice.call(arguments));
+        // Use async=true for asynchronous requests.
+        // This fix the warning related to the deprecation of synchronous XMLHttpRequest.
+        proxied.apply(this, [method, url, true, user, pass]);
     };
 
     // catch fetch AJAX requests
