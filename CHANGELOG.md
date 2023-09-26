@@ -1,10 +1,16 @@
 Yii Framework 2 debug extension Change Log
 ==========================================
 
-2.1.25 under development
+2.1.26 under development
 ------------------------
 
-- Bug #503: Fix accessing toolbar data if it's not available (xepozz) 
+- no changes in this release.
+
+
+2.1.25 September 26, 2023
+-------------------------
+
+- Bug #503: Fix accessing toolbar data if it's not available (xepozz)
 
 
 2.1.24 July 10, 2023
